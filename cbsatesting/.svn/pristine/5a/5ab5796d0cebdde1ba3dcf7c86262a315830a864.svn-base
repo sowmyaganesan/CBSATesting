@@ -1,0 +1,566 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+<title>Scalability Monitor</title>
+
+<link rel="stylesheet" type="text/css"
+	href="/cbsatesting/script/dijit/themes/claro/claro.css" />
+<link rel="stylesheet" type="text/css"
+	href="/cbsatesting/style/main.css" />
+
+<script src="/cbsatesting/script/dojo/dojo.js"
+	djConfig="parseOnLoad: true"></script>
+<script src="three.js"></script>
+<script src="Detector.js"></script>
+<script src="TrackballControls.js"></script>
+<script src="THREEx.KeyboardState.js"></script>
+<script src="THREEx.FullScreen.js"></script>
+<script src="THREEx.WindowResize.js"></script>
+
+<!-- load fonts -->
+
+<script src="helvetiker_regular.typeface.js"></script>
+<script type="text/javascript"> 
+			
+			function displayModel(modelName)
+			{
+				var name = modelName.replace(/ /g, '%20');
+				document.location.href = "/cbsatesting/Performance/PerformanceModels/DisplayModel.jsp?Name=" + name;
+			}
+		</script>
+<body class="claro">
+	<p>
+		<a href="../Performance/SaaSEvaluation.jsp"> SaaS Evaluation> </a> <a
+			href="../PerformanceValidation.jsp"> Performance Validation> </a> <a
+			href="../PerformanceMonitor.jsp"> Performance Monitor> </a> View
+		Polygon
+	</p>
+
+	<h2>
+		Model Monitor: <a href="#"
+			onClick="displayModel('<%=request.getParameter("Name")%>')"> <%=request.getParameter("Name")%>
+		</a>
+	</h2>
+	<%
+		if (!(request.getParameter("Name").equalsIgnoreCase("CRAM") || (request
+				.getParameter("Name").equalsIgnoreCase("CRUM")) || (request.getParameter("Name").equalsIgnoreCase("SEC") ))) {
+			out.println("<p id='message'>There is no  3D graph but the models provided give other graphs</p>");
+		} else {
+			
+			out.println("<table><tr><td><div> Statistics:<table class='blueTable' id=\"data\"></table></div></td><td><div id=\"chart\" style=\"width: 500px; height: 318px;\"></div></td></tr>");
+		}
+	%>
+
+	<script type="text/javascript">
+	   dojo.require("dojox.charting.Chart2D");
+	   dojo.require("dojox.charting.themes.Wetland");
+	   dojo.require("dojox.charting.widget.SelectableLegend");
+	   dojo.require("dojox.charting.action2d.Tooltip");
+	   
+	   var modelName="<%=request.getParameter("Name")%>";
+		var container, scene, camera, renderer, controls, stats;
+		var keyboard = new THREEx.KeyboardState();
+		var clock = new THREE.Clock();
+
+		function init() {
+			// SCENE
+			scene = new THREE.Scene();
+
+			// CAMERA
+			var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+			var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
+			camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
+			scene.add(camera);
+			camera.position.set(0, 200, 200);
+			camera.lookAt(scene.position);
+			// RENDERER
+			if (Detector.webgl)
+				renderer = new THREE.WebGLRenderer({
+					antialias : true
+				});
+			else
+				renderer = new THREE.CanvasRenderer();
+			renderer.setSize(SCREEN_WIDTH/2, SCREEN_HEIGHT);
+
+			container = document.getElementById("chart");
+
+			// document.body.appendChild( container );
+			container.appendChild(renderer.domElement);
+			
+			// CONTROLS
+			controls = new THREE.TrackballControls(camera);
+
+			
+			
+		}
+		
+		
+		function add3dText(key1,key2,key3){
+			
+			var materialFront = new THREE.MeshBasicMaterial({
+				color : 0xff0000
+			});
+			var materialSide = new THREE.MeshBasicMaterial({
+				color : 0x000088
+			});
+			var materialArray = [ materialFront, materialSide ];
+			console.log("setup the arrays and THREE objects");
+			var textGeom1 = new THREE.TextGeometry(key1, {
+				size : 8,
+				height : 1,
+				curveSegments : 3,
+				font : "helvetiker",
+				weight : "normal",
+				style : "normal",
+				bevelThickness : 1,
+				bevelSize : 2,
+				bevelEnabled : false,
+				material : 0,
+				extrudeMaterial : 1
+			});
+			// font: helvetiker, gentilis, droid sans, droid serif, optimer
+			// weight: normal, bold
+
+			var textMaterial = new THREE.MeshFaceMaterial(materialArray);
+			var textMesh = new THREE.Mesh(textGeom1, textMaterial);
+
+			textMesh.position.set(0, 0, 80);
+			textMesh.rotation.x = -Math.PI / 4;
+			scene.add(textMesh);
+
+			var textGeom2 = new THREE.TextGeometry(key2, {
+				size : 6,
+				height : 1,
+				curveSegments : 3,
+				font : "helvetiker",
+				weight : "normal",
+				style : "normal",
+				bevelThickness : 1,
+				bevelSize : 2,
+				bevelEnabled : false,
+				material : 0,
+				extrudeMaterial : 1
+			});
+			
+			var textMesh2 = new THREE.Mesh(textGeom2, textMaterial);
+
+			textMesh2.position.set(69.28, 0, -40);
+			textMesh2.rotation.x = -Math.PI / 4;
+			scene.add(textMesh2);
+
+			var textGeom3 = new THREE.TextGeometry(key3, {
+				size : 6,
+				height : 1,
+				curveSegments : 3,
+				font : "helvetiker",
+				weight : "normal",
+				style : "normal",
+				bevelThickness : 1,
+				bevelSize : 2,
+				bevelEnabled : false,
+				material : 0,
+				extrudeMaterial : 1
+			});
+			
+			var textMesh3 = new THREE.Mesh(textGeom3, textMaterial);
+
+			textMesh3.position.set(-69.28, 0, -40);
+			textMesh3.rotation.x = -Math.PI / 4;
+			scene.add(textMesh3);
+
+			var textGeom4 = new THREE.TextGeometry("Time", {
+				size : 6,
+				height : 1,
+				curveSegments : 3,
+				font : "helvetiker",
+				weight : "normal",
+				style : "normal",
+				bevelThickness : 1,
+				bevelSize : 2,
+				bevelEnabled : false,
+				material : 0,
+				extrudeMaterial : 1
+			});
+			
+			var textMesh4 = new THREE.Mesh(textGeom4, textMaterial);
+
+			textMesh4.position.set(0, 80, 0);
+			textMesh4.rotation.x = -Math.PI / 4;
+			scene.add(textMesh4);
+
+			
+		}
+
+function add5dText(key1,key2,key3,key4,key5){
+			
+			var materialFront = new THREE.MeshBasicMaterial({
+				color : 0xff0000
+			});
+			var materialSide = new THREE.MeshBasicMaterial({
+				color : 0x000088
+			});
+			var materialArray = [ materialFront, materialSide ];
+			console.log("setup the arrays and THREE objects");
+			var textGeom1 = new THREE.TextGeometry(key1, {
+				size : 6,
+				height : 1,
+				curveSegments : 3,
+				font : "helvetiker",
+				weight : "normal",
+				style : "normal",
+				bevelThickness : 1,
+				bevelSize : 2,
+				bevelEnabled : false,
+				material : 0,
+				extrudeMaterial : 1
+			});
+			// font: helvetiker, gentilis, droid sans, droid serif, optimer
+			// weight: normal, bold
+
+			var textMaterial = new THREE.MeshFaceMaterial(materialArray);
+			var textMesh = new THREE.Mesh(textGeom1, textMaterial);
+
+			textMesh.position.set(0, 0, 100);
+			textMesh.rotation.x = -Math.PI / 4;
+			scene.add(textMesh);
+
+			var textGeom2 = new THREE.TextGeometry(key2, {
+				size : 6,
+				height : 1,
+				curveSegments : 3,
+				font : "helvetiker",
+				weight : "normal",
+				style : "normal",
+				bevelThickness : 1,
+				bevelSize : 2,
+				bevelEnabled : false,
+				material : 0,
+				extrudeMaterial : 1
+			});
+			
+			var textMesh2 = new THREE.Mesh(textGeom2, textMaterial);
+
+			textMesh2.position.set(0.951*100, 0, 0.309*100);
+			textMesh2.rotation.x = -Math.PI / 4;
+			scene.add(textMesh2);
+
+			var textGeom3 = new THREE.TextGeometry(key3, {
+				size : 6,
+				height : 1,
+				curveSegments : 3,
+				font : "helvetiker",
+				weight : "normal",
+				style : "normal",
+				bevelThickness : 1,
+				bevelSize : 2,
+				bevelEnabled : false,
+				material : 0,
+				extrudeMaterial : 1
+			});
+			
+			var textMesh3 = new THREE.Mesh(textGeom3, textMaterial);
+
+			textMesh3.position.set(0.588*100, 0, -0.809*100);
+			textMesh3.rotation.x = -Math.PI / 4;
+			scene.add(textMesh3);
+
+			var textGeom4 = new THREE.TextGeometry(key4, {
+				size : 6,
+				height : 1,
+				curveSegments : 3,
+				font : "helvetiker",
+				weight : "normal",
+				style : "normal",
+				bevelThickness : 1,
+				bevelSize : 2,
+				bevelEnabled : false,
+				material : 0,
+				extrudeMaterial : 1
+			});
+			
+			var textMesh4 = new THREE.Mesh(textGeom4, textMaterial);
+
+			textMesh4.position.set(-0.588*100, 0, -0.809*100);
+			textMesh4.rotation.x = -Math.PI / 4;
+			scene.add(textMesh4);
+			
+			var textGeom4 = new THREE.TextGeometry(key5, {
+				size : 6,
+				height : 1,
+				curveSegments : 3,
+				font : "helvetiker",
+				weight : "normal",
+				style : "normal",
+				bevelThickness : 1,
+				bevelSize : 2,
+				bevelEnabled : false,
+				material : 0,
+				extrudeMaterial : 1
+			});
+			
+			var textMesh4 = new THREE.Mesh(textGeom4, textMaterial);
+
+			textMesh4.position.set(-0.951*100, 0, 0.309*100);
+			textMesh4.rotation.x = -Math.PI / 4;
+			scene.add(textMesh4);
+
+			var textGeom4 = new THREE.TextGeometry("Time", {
+				size : 6,
+				height : 1,
+				curveSegments : 3,
+				font : "helvetiker",
+				weight : "normal",
+				style : "normal",
+				bevelThickness : 1,
+				bevelSize : 2,
+				bevelEnabled : false,
+				material : 0,
+				extrudeMaterial : 1
+			});
+			
+			var textMesh4 = new THREE.Mesh(textGeom4, textMaterial);
+
+			textMesh4.position.set(0, 100, 0);
+			textMesh4.rotation.x = -Math.PI / 4;
+			scene.add(textMesh4);
+		}
+
+		
+		function plotTuble(x, y, z, v) {
+			var colorCode = Math.random() * 0xffffff;
+			var geometry = new THREE.Geometry();
+			var material = new THREE.LineBasicMaterial({
+				color : colorCode,
+				linewidth : 1
+			});
+
+			geometry.vertices.push(new THREE.Vector3(0, v, 0));
+			geometry.vertices.push(new THREE.Vector3(1.732 * x, 0, -x));
+
+			geometry.vertices.push(new THREE.Vector3(0, v, 0));
+			geometry.vertices.push(new THREE.Vector3(-1.732 * y, 0, -y));
+
+			geometry.vertices.push(new THREE.Vector3(0, v, 0));
+			geometry.vertices.push(new THREE.Vector3(0, 0, 2 * z));
+
+			geometry.vertices.push(new THREE.Vector3(1.732 * x, 0, -x));
+			geometry.vertices.push(new THREE.Vector3(-1.732 * y, 0, -y));
+			geometry.vertices.push(new THREE.Vector3(0, 0, 2 * z));
+			geometry.vertices.push(new THREE.Vector3(1.732 * x, 0, -x));
+
+			var line = new THREE.Line(geometry, material, THREE.LineStrip);
+			line.position.set(0, 0, 0);
+			scene.add(line);
+
+		}
+
+		function plotaxis(axisLength) {
+			//Shorten the vertex function
+			function v(x, y, z) {
+				return new THREE.Vector3(x, y, z);
+
+			}
+
+			//Create axis (point1, point2, colour)
+			function createAxis(p1, p2, color) {
+				var line, lineGeometry = new THREE.Geometry(), lineMat = new THREE.LineBasicMaterial(
+						{
+							color : color,
+							lineWidth : 1
+						});
+				lineGeometry.vertices.push(p1, p2);
+				line = new THREE.Line(lineGeometry, lineMat);
+				scene.add(line);
+
+			}
+
+			createAxis(v(0, 0, 0), v(0, 0, 2 * axisLength), 0xFF0000);
+			createAxis(v(0, 0, 0), v(1.732 * axisLength, 0, -axisLength),
+					0x00FF00);
+			createAxis(v(0, 0, 0), v(-1.732 * axisLength, 0, -axisLength),
+					0x0000FF);
+			createAxis(v(0, 0, 0), v(0, 2 * axisLength, 0), 0xFF0FF0);
+
+		};
+		
+		function plotTuble5d(x, y, z, a, b, v) {
+			   var colorCode = Math.random()*0xffffff;
+			   var geometry = new THREE.Geometry();
+			   var material = new THREE.LineBasicMaterial( { color: colorCode, linewidth: 1 } );
+			  
+			  
+
+			   geometry.vertices.push( new THREE.Vector3( 0, v, 0 ) );
+			   geometry.vertices.push( new THREE.Vector3( 0, 0, x ) );
+
+			   geometry.vertices.push( new THREE.Vector3( 0, v, 0 ) );
+			   geometry.vertices.push( new THREE.Vector3( 0.951*y, 0, 0.309*y ) );
+
+			   geometry.vertices.push( new THREE.Vector3( 0, v, 0 ) );
+			   geometry.vertices.push( new THREE.Vector3( 0.588*z, 0, -0.809*z) );
+
+			   geometry.vertices.push( new THREE.Vector3( 0, v, 0 ) );
+			   geometry.vertices.push( new THREE.Vector3( -0.588*a, 0, -0.809*a) );
+
+			   geometry.vertices.push( new THREE.Vector3( 0, v, 0 ) );
+			   geometry.vertices.push( new THREE.Vector3( -0.951*b, 0, 0.309*b) );
+			   
+			   geometry.vertices.push( new THREE.Vector3( 0, 0, x  ) );
+			   geometry.vertices.push( new THREE.Vector3( 0.951*y, 0, 0.309*y) );
+			   geometry.vertices.push( new THREE.Vector3( 0.588*z, 0, -0.809*z) );
+			   geometry.vertices.push( new THREE.Vector3( -0.588*a, 0, -0.809*a ) );
+			   geometry.vertices.push( new THREE.Vector3( -0.951*b, 0, 0.309*b ) );
+			   geometry.vertices.push( new THREE.Vector3( 0, 0, x  ) );
+			   
+			   var line = new THREE.Line( geometry, material, THREE.LineStrip);
+			   line.position.set( 0, 0, 0 );
+			   scene.add( line );
+			   
+			}
+
+
+		function plotaxis5d(axisLength){
+			   //Shorten the vertex function
+			   function v(x,y,z){ 
+			      return new THREE.Vertex(new THREE.Vector3(x,y,z)); 
+			   }
+
+			   //Create axis (point1, point2, colour)
+			   function createAxis(p1, p2, color){
+			      var line, lineGeometry = new THREE.Geometry(),
+			      lineMat = new THREE.LineBasicMaterial({color: color, lineWidth: 1});
+			      lineGeometry.vertices.push(p1, p2);
+			      line = new THREE.Line(lineGeometry, lineMat);
+			      scene.add(line);
+			   }
+
+			   createAxis(v(0, 0, 0), v(0, 0, axisLength), 0xFF0000);
+			   createAxis(v(0, 0, 0), v(0.951*axisLength, 0, 0.309*axisLength), 0x0FF00F);
+			   createAxis(v(0, 0, 0), v(0.588*axisLength, 0, -0.809*axisLength), 0x00FFF0);
+			   createAxis(v(0, 0, 0), v(-0.588*axisLength, 0, -0.809*axisLength), 0xF00FFF);
+			   createAxis(v(0, 0, 0), v(-0.951*axisLength, 0, 0.309*axisLength), 0xFF00FF);
+			   createAxis(v(0, 0, 0), v(0, axisLength, 0), 0xFFFFFF);
+
+
+
+			};
+			
+		function animate() {
+			requestAnimationFrame(animate);
+			render();
+			update();
+		}
+
+		function update() {
+
+			controls.update();
+
+		}
+
+		function render() {
+			renderer.render(scene, camera);
+		}
+
+		dojo.addOnLoad(function() {
+			dojo.xhrGet({
+				url : "/cbsatesting/Scalability/ChartData?modelName="
+						+ modelName,
+				handleAs : "json",
+				load : function(data) {
+					var targetNode = dojo.byId("data");
+					var tablestring = "<tr><td>CollectedTime</td><td>MetricName</td><td>Metricdata</td></tr>";
+					for(var i=0;i<6;i=i+2){
+						
+						for(var key in data[i+1]){
+							tablestring+="<tr><td>"+data[i]['time']+"</td>";
+							tablestring+="<td>"+key+"</td><td>" + data[i+1][key] + "</td>";
+							tablestring+="</tr>";
+						}
+						
+					}
+			           targetNode.innerHTML = tablestring;
+					init();
+					console.log(data);
+					showChart(data);
+				}
+			});
+		  
+		});
+		
+
+		function showChart(data) {
+			var par1, par2, par3, par4, par5;
+			var key1,key2,key3,key4,key5;
+			var i = 1;
+
+			console.log(data[0]);
+			for ( var j = 1; j < 6; j=j+2) {
+				for ( var key in data[j]) {
+
+					switch (i) {
+					case 1:
+						par1 = data[j][key];
+						key1=key;
+						break;
+					case 2:
+						par2 = data[j][key];
+						key2=key;
+						break;
+					case 3:
+						par3 = data[j][key];
+						key3=key;
+						break;
+					case 4:
+						par4 = data[j][key];
+						key4=key;
+						break;
+					case 5:
+						par5 = data[j][key];
+						key5=key;
+						break;
+					}
+					i++;
+
+				}
+				console.log(j);
+				var hms = data[j-1]["time"];   // your input string
+				var a = hms.split(':'); // split it at the colons
+
+				console.log(a[1]);
+				if(!modelName.localeCompare("SEC")){
+					plotaxis(40);
+					// add 3D text
+					add3dText(key1,key2,key3);
+					plotTuble(par1/10, par2, par3,a[1]*1);
+				}
+				else if(!modelName.localeCompare("CRAM")){
+					plotaxis5d(100);
+					add5dText(key1,key2,key3,key4,key5);
+					plotTuble5d(par1*10, par2*10, par3*10,par4*10,par5*10,a[1]*1);
+					
+				}
+				else{
+					plotaxis5d(100);
+					add5dText(key1,key2,key3,key4,key5);
+					plotTuble5d(par1, par2, par3,par4,par5,a[1]*1);
+				}
+				
+
+			}
+			animate();
+		}
+	</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1751 @@
+<html>
+<head><style type='text/css'>
+body, table {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    font-style: italic;
+}
+
+.selected {
+    background-color: #ffffcc;
+}
+
+.status_done {
+    background-color: #eeffee;
+}
+
+.status_passed {
+    background-color: #ccffcc;
+}
+
+.status_failed {
+    background-color: #ffcccc;
+}
+
+.breakpoint {
+    background-color: #cccccc;
+    border: 1px solid black;
+}
+</style><title>Test suite results</title></head>
+<body>
+<h1>Test suite results </h1>
+
+<table>
+<tr>
+<td>result:</td>
+<td>failed</td>
+</tr>
+<tr>
+<td>totalTime:</td>
+<td>1</td>
+</tr>
+<tr>
+<td>numTestTotal:</td>
+<td>8</td>
+</tr>
+<tr>
+<td>numTestPasses:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numTestFailures:</td>
+<td>8</td>
+</tr>
+<tr>
+<td>numCommandPasses:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandFailures:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandErrors:</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Selenium Version:</td>
+<td>2.31</td>
+</tr>
+<tr>
+<td>Selenium Revision:</td>
+<td>.0</td>
+</tr>
+<tr>
+<td>
+<table id="suiteTable" class="selenium" border="1" cellpadding="1" cellspacing="1"><tbody>
+<tr class="title        status_failed"><td><b>Test Suite</b></td></tr>
+
+
+
+
+<tr class="  status_failed"><td><a href="#testresult0">Magento Release 1.0-01 Place Order using New GENERAL Customer</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult1">Magento Release 1.0-02 Place Order using New WHOLESALE Customer</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult2">Magento Release 1.0-03 Place Order using New RETAILER Customer</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult3">Magento Release 1.0-04 Place Order using New QAAAA Customer</a></td></tr>
+
+<tr class="  status_failed"><td><a href="#testresult4">Magento Release 1.0-05 Order not Placed- Email Id already Exists</a></td></tr>
+
+
+
+<tr class="  status_failed"><td><a href="#testresult5">Magento Release 1.0-06 Order not Placed- Incorrect Email Id</a></td></tr>
+
+
+
+<tr class="  status_failed"><td><a href="#testresult6">Magento Release 1.0-07 Order not Placed- No Product Items added to Cart</a></td></tr>
+
+
+
+
+<tr class="  status_failed"><td><a href="#testresult7">Magento Release 1.0-08 Order Placed Successfully creating New Customer</a></td></tr>
+
+
+</tbody></table>
+
+
+</td>
+<td>&nbsp;</td>
+</tr>
+</table><table><tr>
+<td><a name="testresult0">Magento Release 1.0-01 Place Order using New GENERAL Customer.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">Magento Release 1.0-01 Place Order using New GENERAL Customer</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/magento_test/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/table/tbody/tr/td[2]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='entry-edit']/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=store_1</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='form-buttons']/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//input[@name=''])[7]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='order-search']/div/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextNotPresent</td>
+	<td>No ordered items</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>knight@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_firstname</td>
+	<td>hay</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_lastname</td>
+	<td>word</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_street0</td>
+	<td>12 rd street</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_city</td>
+	<td>mountain view</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=order-billing_address_region_id</td>
+	<td>label=California</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_postcode</td>
+	<td>87665</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_telephone</td>
+	<td>2345432345</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=order-shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=p_method_checkmo</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Get shipping methods and rates</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=s_method_flatrate_flatrate</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='order-totals-bottom']/p[3]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextPresent</td>
+	<td>The order has been created</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult1">Magento Release 1.0-02 Place Order using New WHOLESALE Customer.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">Magento Release 1.0-02 Place Order using New WHOLESALE Customer</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/magento_test/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/table/tbody/tr/td[2]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='entry-edit']/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=store_1</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='form-buttons']/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//input[@name=''])[7]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='order-search']/div/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextNotPresent</td>
+	<td>No ordered items</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=group_id</td>
+	<td>label=Wholesale</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>joel323@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_firstname</td>
+	<td>donald</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_lastname</td>
+	<td>duck</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_street0</td>
+	<td>12 rd street</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_city</td>
+	<td>mountain view</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=order-billing_address_region_id</td>
+	<td>label=California</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_postcode</td>
+	<td>87665</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_telephone</td>
+	<td>4086657474</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=order-shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=p_method_checkmo</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Get shipping methods and rates</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=s_method_flatrate_flatrate</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='order-totals-bottom']/p[3]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextPresent</td>
+	<td>The order has been created</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult2">Magento Release 1.0-03 Place Order using New RETAILER Customer.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">Magento Release 1.0-03 Place Order using New RETAILER Customer</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/magento_test/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/table/tbody/tr/td[2]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='entry-edit']/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=store_1</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='form-buttons']/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//input[@name=''])[7]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='order-search']/div/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextNotPresent</td>
+	<td>No ordered items</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=group_id</td>
+	<td>label=Retailer</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>liverpool@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_firstname</td>
+	<td>suarez</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_lastname</td>
+	<td>duck</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_street0</td>
+	<td>12 rd street</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_city</td>
+	<td>fremont</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=order-billing_address_region_id</td>
+	<td>label=California</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_postcode</td>
+	<td>87665</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_telephone</td>
+	<td>4086657474</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=order-shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=p_method_checkmo</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Get shipping methods and rates</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=s_method_flatrate_flatrate</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='order-totals-bottom']/p[3]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextPresent</td>
+	<td>The order has been created</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult3">Magento Release 1.0-04 Place Order using New QAAAA Customer.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">Magento Release 1.0-04 Place Order using New QAAAA Customer</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/magento_test/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/table/tbody/tr/td[2]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='entry-edit']/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=store_1</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='form-buttons']/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//input[@name=''])[7]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='order-search']/div/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextNotPresent</td>
+	<td>No ordered items</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=group_id</td>
+	<td>label=QAAAA</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>manchester@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_firstname</td>
+	<td>mario</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_lastname</td>
+	<td>balotelli</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_street0</td>
+	<td>12 rd street</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_city</td>
+	<td>san jose</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=order-billing_address_region_id</td>
+	<td>label=California</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_postcode</td>
+	<td>87665</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_telephone</td>
+	<td>4086657474</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=order-shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=p_method_checkmo</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Get shipping methods and rates</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=s_method_flatrate_flatrate</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='order-totals-bottom']/p[3]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextPresent</td>
+	<td>The order has been created</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult4">Magento Release 1.0-05 Order not Placed- Email Id already Exists.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">Magento Release 1.0-05 Order not Placed- Email Id already Exists</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/magento_test/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/table/tbody/tr/td[2]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='entry-edit']/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=store_1</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='form-buttons']/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//input[@name=''])[7]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='order-search']/div/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextNotPresent</td>
+	<td>No ordered items</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=group_id</td>
+	<td>label=Retailer</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>testing1@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_firstname</td>
+	<td>michigan</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_lastname</td>
+	<td>balotelli</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_street0</td>
+	<td>12 rd street</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_city</td>
+	<td>san jose</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=order-billing_address_region_id</td>
+	<td>label=California</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_postcode</td>
+	<td>87665</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_telephone</td>
+	<td>4086657474</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=order-shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=p_method_checkmo</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Get shipping methods and rates</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=s_method_flatrate_flatrate</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='order-totals-bottom']/p[3]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextPresent</td>
+	<td>This customer email already exists</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult5">Magento Release 1.0-06 Order not Placed- Incorrect Email Id.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">Magento Release 1.0-06 Order not Placed- Incorrect Email Id</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/magento_test/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/table/tbody/tr/td[2]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='entry-edit']/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=store_1</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='form-buttons']/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//input[@name=''])[7]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='order-search']/div/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextNotPresent</td>
+	<td>No ordered items</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=group_id</td>
+	<td>label=Retailer</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>1234.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_firstname</td>
+	<td>samantha</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_lastname</td>
+	<td>balotelli</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_street0</td>
+	<td>12 rd street</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_city</td>
+	<td>san jose</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=order-billing_address_region_id</td>
+	<td>label=California</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_postcode</td>
+	<td>87665</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_telephone</td>
+	<td>4086657474</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=order-shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=p_method_checkmo</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Get shipping methods and rates</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=s_method_flatrate_flatrate</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='order-totals-bottom']/p[3]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextPresent</td>
+	<td>Please enter a valid email address. For example johndoe@domain.com</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult6">Magento Release 1.0-07 Order not Placed- No Product Items added to Cart.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">Magento Release 1.0-07 Order not Placed- No Product Items added to Cart</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/magento_test/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/table/tbody/tr/td[2]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='entry-edit']/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=store_1</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=group_id</td>
+	<td>label=Retailer</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>everton@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_firstname</td>
+	<td>michigan</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_lastname</td>
+	<td>balotelli</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_street0</td>
+	<td>12 rd street</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_city</td>
+	<td>san jose</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=order-billing_address_region_id</td>
+	<td>label=California</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_postcode</td>
+	<td>87665</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_telephone</td>
+	<td>4086657474</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=order-shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=p_method_checkmo</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Get shipping methods and rates</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=s_method_flatrate_flatrate</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='order-totals-bottom']/p[3]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextPresent</td>
+	<td>You need to specify order items</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult7">Magento Release 1.0-08 Order Placed Successfully creating New Customer.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">Magento Release 1.0-08 Order Placed Successfully creating New Customer</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/magento_test/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/table/tbody/tr/td[2]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='entry-edit']/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=store_1</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='form-buttons']/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//input[@name=''])[7]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='order-search']/div/div/div/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextNotPresent</td>
+	<td>No ordered items</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=group_id</td>
+	<td>label=Retailer</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>validID@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_firstname</td>
+	<td>michigan</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_lastname</td>
+	<td>balotelli</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_street0</td>
+	<td>12 rd street</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_city</td>
+	<td>san jose</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=order-billing_address_region_id</td>
+	<td>label=California</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_postcode</td>
+	<td>87665</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=order-billing_address_telephone</td>
+	<td>4086657474</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=order-shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=p_method_checkmo</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Get shipping methods and rates</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=s_method_flatrate_flatrate</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='order-totals-bottom']/p[3]/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertTextPresent</td>
+	<td>The order has been created</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr></table><pre>
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-01%20Place%20Order%20using%20New%20GENERAL%20Customer.html
+info: Executing: |open | /magento_test/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-02%20Place%20Order%20using%20New%20WHOLESALE%20Customer.html
+info: Executing: |open | /magento_test/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-03%20Place%20Order%20using%20New%20RETAILER%20Customer.html
+info: Executing: |open | /magento_test/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-04%20Place%20Order%20using%20New%20QAAAA%20Customer.html
+info: Executing: |open | /magento_test/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-05%20Order%20not%20Placed-%20Email%20Id%20already%20Exists.html
+info: Executing: |open | /magento_test/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-06%20Order%20not%20Placed-%20Incorrect%20Email%20Id.html
+info: Executing: |open | /magento_test/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-07%20Order%20not%20Placed-%20No%20Product%20Items%20added%20to%20Cart.html
+info: Executing: |open | /magento_test/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-08%20Order%20Placed%20Successfully%20creating%20New%20Customer.html
+info: Executing: |open | /magento_test/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+</pre></body></html>

@@ -1,0 +1,932 @@
+<html>
+<head><style type='text/css'>
+body, table {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    font-style: italic;
+}
+
+.selected {
+    background-color: #ffffcc;
+}
+
+.status_done {
+    background-color: #eeffee;
+}
+
+.status_passed {
+    background-color: #ccffcc;
+}
+
+.status_failed {
+    background-color: #ffcccc;
+}
+
+.breakpoint {
+    background-color: #cccccc;
+    border: 1px solid black;
+}
+</style><title>Test suite results</title></head>
+<body>
+<h1>Test suite results </h1>
+
+<table>
+<tr>
+<td>result:</td>
+<td>passed</td>
+</tr>
+<tr>
+<td>totalTime:</td>
+<td>15</td>
+</tr>
+<tr>
+<td>numTestTotal:</td>
+<td>16</td>
+</tr>
+<tr>
+<td>numTestPasses:</td>
+<td>16</td>
+</tr>
+<tr>
+<td>numTestFailures:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandPasses:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandFailures:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandErrors:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Selenium Version:</td>
+<td>2.32</td>
+</tr>
+<tr>
+<td>Selenium Revision:</td>
+<td>.0</td>
+</tr>
+<tr>
+<td>
+<table id="suiteTable" class="selenium" border="1" cellpadding="1" cellspacing="1"><tbody>
+<tr class="title status_passed"><td><b>Test Suite</b></td></tr>
+<tr class="  status_passed"><td><a href="#testresult0">RequiredFieldsTest1</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult1">RequiredFieldsTest2</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult2">RequiredFieldsTest3</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult3">RequiredFieldsTest4</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult4">RequiredFieldsTest5</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult5">RequiredFieldsTest6</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult6">RequiredFieldsTest7</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult7">RquiredFieldsTest8</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult8">RequiredFieldsTest9</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult9">RequiredFieldsTest10</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult10">RequiredFieldsTest11</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult11">RequiredFieldsTest12</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult12">RequiredFieldsTest13</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult13">RequiredFieldsTest14</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult14">RequiredFieldsTest15</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult15">RequiredFieldsTest16</a></td></tr>
+</tbody></table>
+
+
+</td>
+<td>&nbsp;</td>
+</tr>
+</table><table><tr>
+<td><a name="testresult0">RequiredFieldsTest1.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest1</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult1">RequiredFieldsTest2.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest2</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult2">RequiredFieldsTest3.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest3</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult3">RequiredFieldsTest4.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest4</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>aaa.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult4">RequiredFieldsTest5.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest5</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>aaaaaaaa</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult5">RequiredFieldsTest6.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest6</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>arleenamala@gmail.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>B</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult6">RequiredFieldsTest7.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest7</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>arleenamala@gmail.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>bbb.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult7">RquiredFieldsTest8.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RquiredFieldsTest8</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>bbb.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>aaaaaaaa</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult8">RequiredFieldsTest9.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest9</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>B</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>bbbbbbbbb</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult9">RequiredFieldsTest10.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest10</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>C</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>ccc.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult10">RequiredFieldsTest11.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest11</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>arleenamala@gmail.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>aaaaaaaa</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult11">RequiredFieldsTest12.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest12</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>B</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>arleenamala@gmail.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>bbb.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult12">RequiredFieldsTest13.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest13</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>arleenamala@gmail.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>bbb.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>bbbbbbbb</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult13">RequiredFieldsTest14.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest14</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>B</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>arleenamala@gmail.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>bbbbbbbb</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult14">RequiredFieldsTest15.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest15</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>A</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>aaa.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>aaaaaaaaa</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult15">RequiredFieldsTest16.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">RequiredFieldsTest16</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>A</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>abc@gmail.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>aaa.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>aaaaaaaaaaa</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr></table><pre>
+info: Starting test /selenium-server/tests/RequiredFieldsTest1.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author |  |
+info: Executing: |type | id=email |  |
+info: Executing: |type | id=url |  |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest2.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=email |  |
+info: Executing: |type | id=url |  |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest3.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author |  |
+info: Executing: |type | id=url |  |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest4.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=email |  |
+info: Executing: |type | id=url | aaa.com |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest5.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author |  |
+info: Executing: |type | id=email |  |
+info: Executing: |type | id=url |  |
+info: Executing: |type | id=comment | aaaaaaaa |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest6.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=url |  |
+info: Executing: |type | id=email | arleenamala@gmail.com |
+info: Executing: |type | id=author | B |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest7.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author |  |
+info: Executing: |type | id=email | arleenamala@gmail.com |
+info: Executing: |type | id=url | bbb.com |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RquiredFieldsTest8.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author |  |
+info: Executing: |type | id=email |  |
+info: Executing: |type | id=url | bbb.com |
+info: Executing: |type | id=comment | aaaaaaaa |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest9.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author | B |
+info: Executing: |type | id=email |  |
+info: Executing: |type | id=url |  |
+info: Executing: |type | id=comment | bbbbbbbbb |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest10.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author | C |
+info: Executing: |type | id=email |  |
+info: Executing: |type | id=url | ccc.com |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest11.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author |  |
+info: Executing: |type | id=url |  |
+info: Executing: |type | id=email | arleenamala@gmail.com |
+info: Executing: |type | id=comment | aaaaaaaa |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest12.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author | B |
+info: Executing: |type | id=email | arleenamala@gmail.com |
+info: Executing: |type | id=url | bbb.com |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest13.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author |  |
+info: Executing: |type | id=email | arleenamala@gmail.com |
+info: Executing: |type | id=url | bbb.com |
+info: Executing: |type | id=comment | bbbbbbbb |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest14.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author | B |
+info: Executing: |type | id=email | arleenamala@gmail.com |
+info: Executing: |type | id=url |  |
+info: Executing: |type | id=comment | bbbbbbbb |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest15.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author | A |
+info: Executing: |type | id=email |  |
+info: Executing: |type | id=url | aaa.com |
+info: Executing: |type | id=comment | aaaaaaaaa |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/RequiredFieldsTest16.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author | A |
+info: Executing: |type | id=email | abc@gmail.com |
+info: Executing: |type | id=url | aaa.com |
+info: Executing: |type | id=comment | aaaaaaaaaaa |
+info: Executing: |clickAndWait | id=submit |  |
+</pre></body></html>

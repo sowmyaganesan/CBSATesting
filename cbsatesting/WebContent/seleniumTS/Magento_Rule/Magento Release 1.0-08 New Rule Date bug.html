@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://ec2-50-17-147-92.compute-1.amazonaws.com" />
+<title>Magento Release 1.0-08 New Rule Date bug</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Magento Release 1.0-08 New Rule Date bug</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/magento_test/admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>cmpe287</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[6]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/table/tbody/tr/td[2]/button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rule_name</td>
+	<td>Test Date Bug</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=rule_is_active</td>
+	<td>label=Active</td>
+</tr>
+<tr>
+	<td>addSelection</td>
+	<td>id=rule_website_ids</td>
+	<td>label=Main Website</td>
+</tr>
+<tr>
+	<td>addSelection</td>
+	<td>id=rule_customer_group_ids</td>
+	<td>label=General</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rule_from_date</td>
+	<td>141498</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rule_to_date</td>
+	<td>161689</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@class='content-header']/p/button[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rule_discount_amount</td>
+	<td>90</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/p/button[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>The rule has been saved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

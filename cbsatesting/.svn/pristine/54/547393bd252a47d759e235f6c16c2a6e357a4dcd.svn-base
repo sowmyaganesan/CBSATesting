@@ -1,0 +1,797 @@
+<html>
+<head><style type='text/css'>
+body, table {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    font-style: italic;
+}
+
+.selected {
+    background-color: #ffffcc;
+}
+
+.status_done {
+    background-color: #eeffee;
+}
+
+.status_passed {
+    background-color: #ccffcc;
+}
+
+.status_failed {
+    background-color: #ffcccc;
+}
+
+.breakpoint {
+    background-color: #cccccc;
+    border: 1px solid black;
+}
+</style><title>Test suite results</title></head>
+<body>
+<h1>Test suite results </h1>
+
+<table>
+<tr>
+<td>result:</td>
+<td>failed</td>
+</tr>
+<tr>
+<td>totalTime:</td>
+<td>30</td>
+</tr>
+<tr>
+<td>numTestTotal:</td>
+<td>9</td>
+</tr>
+<tr>
+<td>numTestPasses:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numTestFailures:</td>
+<td>9</td>
+</tr>
+<tr>
+<td>numCommandPasses:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandFailures:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandErrors:</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Selenium Version:</td>
+<td>2.25</td>
+</tr>
+<tr>
+<td>Selenium Revision:</td>
+<td>.0</td>
+</tr>
+<tr>
+<td>
+<table id="suiteTable" class="selenium" border="1" cellpadding="1" cellspacing="1"><tbody>
+<tr class="title         status_failed"><td><b>Test Suite</b></td></tr>
+<tr class="  status_failed"><td><a href="#testresult0">Magento Release 1.0-01 Credit Memo Option</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult1">Magento Release 1.0-02 Selecting Refund Item</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult2">Magento Release 1.0-03 shipping refund error</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult3">Magento Release 1.0-04 Amount refund error</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult4">Magento Release 1.0-05 Credit Memo Mail Send</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult5">Magento Release 1.0-06 Alphanumeric Value Error</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult6">Magento Release 1.0-07 Negative value error</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult7">Magento Release 1.0-08 View Credit Memo</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult8">Magento Release 1.0-09 Credit Memo Total Error</a></td></tr>
+</tbody></table>
+
+
+</td>
+<td>&nbsp;</td>
+</tr>
+</table><table><tr>
+<td><a name="testresult0">Magento Release 1.0-01 Credit Memo Option.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">tc1</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/Magento_novone/index.php/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>cmpe287</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[4]/a/span</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=View</td>
+	<td>Element&nbsp;link=View&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult1">Magento Release 1.0-02 Selecting Refund Item.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">tc2</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/Magento_novone/index.php/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'View')])[3]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/p/button[4]/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>name=creditmemo[items][16][qty]</td>
+	<td>0</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=id_b89446f25d0e3deb7a09a428169d5bb7</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=id_36ec2c62133895c82c7de370f0825df5</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult2">Magento Release 1.0-03 shipping refund error.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">shipping refund amount error</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/Magento_novone/index.php/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'View')])[3]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/p/button[3]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=shipping_amount</td>
+	<td>25</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='order-totals-bottom']/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>verifyTextPresent</td>
+	<td>Maximum shipping amount allowed to refund is: $0.00</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult3">Magento Release 1.0-04 Amount refund error.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">amount to refund more than actual amount</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/Magento_novone/index.php/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'View')])[3]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/p/button[3]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=adjustment_positive</td>
+	<td>900</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='order-totals-bottom']/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>verifyTextPresent</td>
+	<td>Maximum amount available to refund is $15.00</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult4">Magento Release 1.0-05 Credit Memo Mail Send.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">send credit memo mail</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/Magento_novone/index.php/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[4]/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='hor-scroll']/table/tbody/tr[6]/td[9]/a</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='content-header']/p/button[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>assertConfirmation</td>
+	<td>Are you sure you want to send Creditmemo email to customer?</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>verifyAllFields</td>
+	<td>//div[@class='notification-global']/ul/li</td>
+	<td>The message was sent.</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult5">Magento Release 1.0-06 Alphanumeric Value Error.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">alphanumeric value in adjustment refund</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/Magento_novone/index.php/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'View')])[3]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/p/button[3]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>name=creditmemo[items][17][back_to_stock]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>name=creditmemo[items][17][qty]</td>
+	<td>abcd</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='hor-scroll']/table/tfoot/tr/td[2]/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=adjustment_negative</td>
+	<td>abcd</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='order-totals-bottom']/button/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>verifyTextPresent</td>
+	<td>Please enter positive number in this field.</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult6">Magento Release 1.0-07 Negative value error.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">negative value test case</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/Magento_novone/index.php/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=View</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='content-header']/p/button[4]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=adjustment_positive</td>
+	<td>-100</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@class='order-totals-bottom']/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>verifyTextPresent</td>
+	<td>Please enter positive number in this field.</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult7">Magento Release 1.0-08 View Credit Memo.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">view credit memo for a particular customer</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/Magento_novone/index.php/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='hor-scroll']/table/tbody/tr[2]/td[10]/a</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=#sales_order_view_tabs_order_creditmemos &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult8">Magento Release 1.0-09 Credit Memo Total Error.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">Magento Release 1.0-09 Credit Memo Total Error</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/Magento_novone/index.php/admin</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username</td>
+	<td>Element&nbsp;id=username&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=login</td>
+	<td>cmpe287admin</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.form-button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=a[title="close"] &gt; span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'View')])[3]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='content-header']/p/button[3]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=adjustment_negative</td>
+	<td>987654321</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@class='order-totals-bottom']/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>verifyTextPresent</td>
+	<td>Credit memo's total must be positive.</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr></table><pre>
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-01%20Credit%20Memo%20Option.html
+info: Executing: |open | /Magento_novone/index.php/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+info: Executing: |type | id=login | cmpe287admin |
+info: Executing: |clickAndWait | css=input.form-button |  |
+info: Executing: |click | css=a[title=&quot;close&quot;] &gt; span |  |
+info: Executing: |clickAndWait | //ul[@id=&apos;nav&apos;]/li[2]/ul/li[4]/a/span |  |
+info: Executing: |clickAndWait | link=View |  |
+error: Element link=View not found
+warn: currentTest.recordFailure: Element link=View not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-02%20Selecting%20Refund%20Item.html
+info: Executing: |open | /Magento_novone/index.php/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-03%20shipping%20refund%20error.html
+info: Executing: |open | /Magento_novone/index.php/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-04%20Amount%20refund%20error.html
+info: Executing: |open | /Magento_novone/index.php/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-05%20Credit%20Memo%20Mail%20Send.html
+info: Executing: |open | /Magento_novone/index.php/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-06%20Alphanumeric%20Value%20Error.html
+info: Executing: |open | /Magento_novone/index.php/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-07%20Negative%20value%20error.html
+info: Executing: |open | /Magento_novone/index.php/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-08%20View%20Credit%20Memo.html
+info: Executing: |open | /Magento_novone/index.php/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+info: Starting test /selenium-server/tests/Magento%20Release%201.0-09%20Credit%20Memo%20Total%20Error.html
+info: Executing: |open | /Magento_novone/index.php/admin |  |
+info: Executing: |type | id=username | cmpe287 |
+error: Element id=username not found
+warn: currentTest.recordFailure: Element id=username not found
+</pre></body></html>

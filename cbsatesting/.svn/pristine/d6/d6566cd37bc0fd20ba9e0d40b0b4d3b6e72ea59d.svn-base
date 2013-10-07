@@ -1,0 +1,436 @@
+<html>
+<head><style type='text/css'>
+body, table {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    font-style: italic;
+}
+
+.selected {
+    background-color: #ffffcc;
+}
+
+.status_done {
+    background-color: #eeffee;
+}
+
+.status_passed {
+    background-color: #ccffcc;
+}
+
+.status_failed {
+    background-color: #ffcccc;
+}
+
+.breakpoint {
+    background-color: #cccccc;
+    border: 1px solid black;
+}
+</style><title>Test suite results</title></head>
+<body>
+<h1>Test suite results </h1>
+
+<table>
+<tr>
+<td>result:</td>
+<td>failed</td>
+</tr>
+<tr>
+<td>totalTime:</td>
+<td>6</td>
+</tr>
+<tr>
+<td>numTestTotal:</td>
+<td>6</td>
+</tr>
+<tr>
+<td>numTestPasses:</td>
+<td>4</td>
+</tr>
+<tr>
+<td>numTestFailures:</td>
+<td>2</td>
+</tr>
+<tr>
+<td>numCommandPasses:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandFailures:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandErrors:</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Selenium Version:</td>
+<td>2.32</td>
+</tr>
+<tr>
+<td>Selenium Revision:</td>
+<td>.0</td>
+</tr>
+<tr>
+<td>
+<table id="suiteTable" class="selenium" border="1" cellpadding="1" cellspacing="1"><tbody>
+<tr class="title  status_failed"><td><b>Test Suite</b></td></tr>
+<tr class="  status_failed"><td><a href="#testresult0">EmailValidation1</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult1">EmailValidation2</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult2">EmailValidation3</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult3">EmailValidation4</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult4">EmailValidation5</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult5">EmailValidation6</a></td></tr>
+</tbody></table>
+
+
+</td>
+<td>&nbsp;</td>
+</tr>
+</table><table><tr>
+<td><a name="testresult0">EmailValidation1.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">EmailValidation1</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>?????@gmail.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>a</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>ccc.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>cccccccccc</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>assertBodyText</td>
+	<td>id=error-page</td>
+	<td>Actual&nbsp;value&nbsp;'Duplicate&nbsp;comment&nbsp;detected;&nbsp;it&nbsp;looks&nbsp;as&nbsp;though&nbsp;you‰??ve&nbsp;already&nbsp;said&nbsp;that!'&nbsp;did&nbsp;not&nbsp;match&nbsp;'id=error-page'</td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult1">EmailValidation2.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">EmailValidation2</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>abc.gmail.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult2">EmailValidation3.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">EmailValidation3</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>s</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>abc@????.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>ccc.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>sssss</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult3">EmailValidation4.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">EmailValidation4</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>s</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>abc@gmail?com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>ccc.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>cccccc</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>assertSelectedId</td>
+	<td>id=error-page</td>
+	<td>Specified&nbsp;element&nbsp;is&nbsp;not&nbsp;a&nbsp;Select&nbsp;(has&nbsp;no&nbsp;options)</td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult4">EmailValidation5.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">EmailValidation5</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>f</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>abc@gmail.???</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>aaa.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>aaaaaaa</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult5">EmailValidation6.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">EmailValidation6</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/wordpress/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Hello world!</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=author</td>
+	<td>s</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>abc@gmail.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=url</td>
+	<td>aaa.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=comment</td>
+	<td>ssssssss</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr></table><pre>
+info: Starting test /selenium-server/tests/EmailValidation1.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=email | ?????@gmail.com |
+info: Executing: |type | id=author | a |
+info: Executing: |type | id=url | ccc.com |
+info: Executing: |type | id=comment | cccccccccc |
+info: Executing: |clickAndWait | id=submit |  |
+info: Executing: |assertBodyText | id=error-page |  |
+error: Actual value &apos;Duplicate comment detected; it looks as though you‰??ve already said that!&apos; did not match &apos;id=error-page&apos;
+warn: currentTest.recordFailure: Actual value &apos;Duplicate comment detected; it looks as though you‰??ve already said that!&apos; did not match &apos;id=error-page&apos;
+info: Starting test /selenium-server/tests/EmailValidation2.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=email | abc.gmail.com |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/EmailValidation3.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author | s |
+info: Executing: |type | id=email | abc@????.com |
+info: Executing: |type | id=url | ccc.com |
+info: Executing: |type | id=comment | sssss |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/EmailValidation4.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author | s |
+info: Executing: |type | id=email | abc@gmail?com |
+info: Executing: |type | id=url | ccc.com |
+info: Executing: |type | id=comment | cccccc |
+info: Executing: |clickAndWait | id=submit |  |
+info: Executing: |assertSelectedId | id=error-page | ERROR: please enter a valid email address. |
+error: Specified element is not a Select (has no options)
+warn: currentTest.recordFailure: Specified element is not a Select (has no options)
+info: Starting test /selenium-server/tests/EmailValidation5.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author | f |
+info: Executing: |type | id=email | abc@gmail.??? |
+info: Executing: |type | id=url | aaa.com |
+info: Executing: |type | id=comment | aaaaaaa |
+info: Executing: |clickAndWait | id=submit |  |
+info: Starting test /selenium-server/tests/EmailValidation6.html
+info: Executing: |open | /wordpress/ |  |
+info: Executing: |clickAndWait | link=Hello world! |  |
+info: Executing: |type | id=author | s |
+info: Executing: |type | id=email | abc@gmail.com |
+info: Executing: |type | id=url | aaa.com |
+info: Executing: |type | id=comment | ssssssss |
+info: Executing: |clickAndWait | id=submit |  |
+</pre></body></html>

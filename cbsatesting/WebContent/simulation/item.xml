@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<dropdownmenu>
+    <item value="Magento">Magento</item>
+    <item value="Magento_Main">Magento_Main</item>
+    <item value="TAAS_project">TAAS_project</item>
+</dropdownmenu>

@@ -1,0 +1,262 @@
+/*
+ * this class contains all operations needed to deal with users. It extends
+ * DataAccessLayer class which contains more general methods to handle all
+ * kind of beans and tables.
+ *
+ */
+package model;
+
+import java.sql.*;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Nina
+ */
+public class ProjectManager extends DataAccessLayer
+{
+
+  //  Connection connection;
+    
+    public ProjectManager(){
+    	 
+    	super();
+    }
+
+    public ArrayList<Project> getProjectByStatus(String status) {
+    	String query = "select * from project where status='"+status+"';";
+    	ArrayList<Project> projs = new ArrayList<Project>();
+    	try{
+    	Statement st = con.createStatement();
+    	ResultSet rs = st.executeQuery(query);
+    	
+    	while(rs.next()){
+    		int id = rs.getInt("ID");
+    		String name = rs.getString("Name");
+    		String owner = rs.getString("Owner");
+    		String instanceId = rs.getString("Instance_id");
+    		String s = rs.getString("Status");
+    		String tools = rs.getString("Tools");
+    		String scriptpath = rs.getString("ScriptPath");
+    		Project proj = new Project(id, name, owner, instanceId, s, tools, scriptpath);
+    		projs.add(proj);
+    	}
+    	}catch (SQLException e){
+    		e.printStackTrace();
+    	}
+    	return projs;
+    
+    }
+    
+    public Project getProjectByName(String name) {
+    	String query = "select * from project where Name='"+name+"';";
+    	Project proj = null;
+    	try{
+    	Statement st = con.createStatement();
+    	ResultSet rs = st.executeQuery(query);
+    	
+    	if(rs.next()){
+    		int id = rs.getInt("ID");
+    		String n = rs.getString("Name");
+    		String owner = rs.getString("Owner");
+    		String instanceId = rs.getString("Instance_id");
+    		String s = rs.getString("Status");
+    		String tools = rs.getString("Tools");
+    		String scriptpath = rs.getString("ScriptPath");
+    		proj = new Project(id, n, owner, instanceId, s, tools, scriptpath);
+    	
+    	}
+    	}catch (SQLException e){
+    		e.printStackTrace();
+    	}
+    	return proj;
+    
+    }
+    
+    public ArrayList<Project> getProjectByOwner(String owner){
+    	String query = "select * from project where Owner='"+owner+"' and Status='Open';";
+    	ArrayList<Project> projs = new ArrayList<Project>();
+    	try{
+    	Statement st = con.createStatement();
+    	ResultSet rs = st.executeQuery(query);
+    	
+    	while(rs.next()){
+    		int id = rs.getInt("ID");
+    		String name = rs.getString("Name");
+    		String o = rs.getString("Owner");
+    		String instanceId = rs.getString("Instance_id");
+    		String status = rs.getString("Status");
+    		String tools = rs.getString("Tools");
+    		String scriptpath = rs.getString("ScriptPath");
+    		Project proj = new Project(id, name, o, instanceId, status, tools, scriptpath);
+    		projs.add(proj);
+    	}
+    	}catch (SQLException e){
+    		e.printStackTrace();
+    	}
+    	return projs;
+    }
+    
+    public ArrayList<Project> getProjectByTester(String tester){
+    	String query = "select p.* from project p,  project_tester t, user_login u "+
+"where p.ID=t.Project_id " +
+"and p.Status='Open' "+
+"and t.Tester_id = u.ID "+
+"and u.UserName = '"+tester+"'";
+    	ArrayList<Project> projs = new ArrayList<Project>();
+    	try{
+    	Statement st = con.createStatement();
+    	ResultSet rs = st.executeQuery(query);
+    	
+    	while(rs.next()){
+    		int id = rs.getInt("ID");
+    		String name = rs.getString("Name");
+    		String o = rs.getString("Owner");
+    		String instanceId = rs.getString("Instance_id");
+    		String status = rs.getString("Status");
+    		String tools = rs.getString("Tools");
+    		String scriptpath = rs.getString("ScriptPath");
+    		Project proj = new Project(id, name, o, instanceId, status, tools, scriptpath);
+    		projs.add(proj);
+    	}
+    	}catch (SQLException e){
+    		e.printStackTrace();
+    	}
+    	return projs;
+    }
+    
+    /**
+     * front end will check the privilege
+     * 
+     * @return
+     */
+    public int createProject(String Name, String Owner, String Instance_id, String Status, String Tools, String ScriptPath){
+    	Project proj = this.getProjectByName(Name);
+    	if(proj!=null){
+    		System.out.println("ERROR(creatProject): Project "+Name+" already exists!");
+    		 return -1;
+    	}else{
+    		String query = "insert into project ( Name, Owner, Instance_id, Status, Tools, ScriptPath) values ('"
+    				+Name+"', '"+Owner+"', '"+Instance_id+"', '"+Status+"', '"+Tools+"', '"+ScriptPath+"');";
+    		System.out.println(query);
+    		try{
+    	    	Statement st = con.createStatement();
+    	    	int n = st.executeUpdate(query);
+    	    	Project newproj = this.getProjectByName(Name);
+    	    	if(newproj!=null){
+    	    		System.out.println("Success (creatProject): Project "+Name+" inserted!");
+    	    		if(setInstanceUsedStatus(Instance_id, "T")){
+    	    			return newproj.id;
+    	    		}else
+    	    			return -1;
+    	    	}else{
+    	    		System.out.println("ERROR(creatProject): Project "+Name+" insertion failed!");
+    	    		return -1;
+        	    }
+    	    	
+    	    
+    	    		
+    		}catch (SQLException e){
+        		e.printStackTrace();
+        		return -1;
+        	}
+    	}
+    }
+    
+    
+    /**
+     * 
+     * @param projectId
+     * @return
+     */
+    public boolean closeProject(String name){
+    	Project proj = this.getProjectByName(name);
+    	if(proj==null){
+    		System.out.println("ERROR(closeProject): Project "+name+" does NOT exists!");
+    		 return false;
+    	}else{
+    		String query = "update project set Status='Close'  where ID="+proj.id;
+    		try{
+    	    	Statement st = con.createStatement();
+    	    	int n = st.executeUpdate(query);
+    	    	if(n>0){
+    	    		System.out.println("Success (closeProject): Project "+name+" closed!");
+    	    		if(setInstanceUsedStatus(proj.Instance_id, "F")){
+    	    			return true;
+    	    		}else
+    	    			return true;
+    	    	}else{
+    	    		System.out.println("ERROR(closeProject): Project "+name+" close failed!");
+    	    		return false;
+        	    }
+    	    		
+    		}catch (SQLException e){
+        		e.printStackTrace();
+        		return false;
+        	}
+    	}
+    }
+    
+    private boolean setInstanceUsedStatus(String instanceId, String isUsed){
+    	Connection connect = null;
+    	Statement statement = null;
+    	try{
+    	Class.forName("com.mysql.jdbc.Driver");
+        // Setup the connection with the DB
+         connect = DriverManager
+            .getConnection("jdbc:mysql://localhost/amazon_instance?"
+                + "user=root&password=");
+         statement = connect.createStatement();
+         String query = "update instance set is_used='"+isUsed+"'  where Amazon_instance_id='"+instanceId+"'";
+         int n = statement.executeUpdate(query);
+         if(n>0){
+        	 System.out.println("Success (closeProject:setInstanceUsedStatus): instance "+instanceId+" is_used="+isUsed);
+        	 return true;
+         }else{
+        	 System.out.println("ERROR (closeProject:setInstanceUsedStatus): instance "+instanceId+" is_used="+isUsed);
+        	 return false;
+         }
+    	}catch (ClassNotFoundException e){
+    		e.printStackTrace();
+    		return false;
+    	}catch (SQLException e){
+    		e.printStackTrace();
+    		return false;
+    	}finally{
+    		try{
+  	      if (statement != null) {
+  	        statement.close();
+  	      }
+
+  	      if (connect != null) {
+  	        connect.close();
+  	      }
+    		}catch(Exception e){
+    			e.printStackTrace();
+    		}
+    	}
+    }
+    
+
+   /**
+     */
+//........................ M A I N   M E T H O D ............................//
+	/**
+	 * This main method is just for testing this class.
+	 * @param args the arguments
+	 */
+	public static void main(String[] args)
+	{
+        ProjectManager um = new ProjectManager();
+       
+
+	//	um.testactivateUser();
+
+		/* .............................................*/
+        um.releaseConnection();
+
+	} // end of the main method.
+
+
+} //end of the class
+

@@ -1,0 +1,528 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+
+<%@ page import="java.sql.*" %> 
+<%@ page import="java.io.*" %> 
+<%@ page import="java.util.*" %>
+<%@ page import="java.text.*" %>
+<%@ page import="java.lang.*" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<% 
+	String[] collectedTime = new String[10];
+	String[] colltTime2 = new String[8];
+	Integer[] diskreadwrite = new Integer[8];
+	String[] colltTime3 = new String[8];
+	Integer[] cpureadwriteload = new Integer[8];
+	Integer[] CostData = new Integer[10];
+	Integer[] ESSData = new Integer[10];
+	Long[] resptime = new Long[2];
+	Float[] scale = new Float[4];
+	String[] colltTime4 = new String[5];
+	String othermodel = (request.getParameter("Name").equalsIgnoreCase("ESS")) ? "Cost" : "ESS";
+
+	try {
+		/* Create string of connection url within specified format with machine name, 
+		port number and database name. Here machine name id localhost and 
+		database name is usermaster. */ 
+		String connectionURL = "jdbc:mysql://localhost:3306/cbsa"; 
+		
+		// declare a connection by using Connection interface 
+		Connection connection = null; 
+		Statement statement = null;
+		ResultSet resultset = null;
+		
+		// Load JBBC driver "com.mysql.jdbc.Driver" 
+		Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+		
+		/* Create a connection by using getConnection() method that takes parameters of 
+		string type connection url, user name and password to connect to database. */ 
+		connection = DriverManager.getConnection(connectionURL, "root", "");
+		
+		// check weather connection is established or not by isClosed() method 
+		if(connection.isClosed())
+		{
+			throw new Exception();
+		}
+		
+		Statement statement3 = connection.createStatement();
+		ResultSet resultset3 = statement3.executeQuery("SELECT CollectedTime, Data FROM `scalabilitymodeldata` WHERE MetricID=145 ORDER BY `CollectedTime` DESC LIMIT 0 , 9");
+		Statement statement4 = connection.createStatement();
+		ResultSet resultset4 = statement4.executeQuery("SELECT CollectedTime, Data FROM `scalabilitymodeldata` WHERE MetricID=138 ORDER BY `CollectedTime` DESC LIMIT 0 , 9");
+		Statement statement5 = connection.createStatement();
+		ResultSet resultset5 = statement5.executeQuery("SELECT CollectedTime, Data FROM `scalabilitymodeldata` WHERE MetricID=6 OR MetricID=11 ORDER BY `CollectedTime` DESC LIMIT 8");
+		Statement statement6 = connection.createStatement();
+		ResultSet resultset6 = statement6.executeQuery("SELECT CollectedTime, Data FROM `scalabilitymodeldata` WHERE ModelID=10 ORDER BY `CollectedTime` DESC LIMIT 8");
+		Statement statement7 = connection.createStatement();
+		ResultSet resultset7 = statement7.executeQuery("SELECT * FROM `loadtestdata` ORDER BY `CollectedTime` DESC LIMIT 5");
+		statement = connection.createStatement();
+		resultset = statement.executeQuery("Select * from scalabilitymodel where Name = '" + request.getParameter("Name") + "'");
+		if (resultset.next())
+		{ 
+			Statement statement2 = connection.createStatement();
+			ResultSet resultset2 = statement2.executeQuery("Select scalabilitymetric.Name, scalabilitymetric.Statistic from scalabilitymetric where scalabilitymetric.MetricID in "
+					+ "(Select scalabilitymodelmetric.MetricID from scalabilitymodelmetric where scalabilitymodelmetric.ModelMetric = 0 and scalabilitymodelmetric.ModelID in "
+					+ "(Select scalabilitymodel.ModelID from scalabilitymodel where scalabilitymodel.Name = '" + request.getParameter("Name") + "'))");
+			
+			int divisions = 0;
+   			while(resultset2.next())
+   			{
+   				divisions++;
+   			}
+	%>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>Scalability Report</title>
+		
+		<link rel="stylesheet" type="text/css" href="/cbsatesting/style/main.css" />
+		<link rel="stylesheet" type="text/css" href="/cbsatesting/script/dijit/themes/claro/claro.css" />
+        
+        <script type="text/javascript" src="/cbsatesting/Scalability/ScalabilityModels/DisplayModel.js"></script>
+        <script type="text/javascript" src="/cbsatesting/Performance/PerformanceModels/jscharts.js"></script>
+        <script src="/cbsatesting/script/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
+        
+		<script type="text/javascript">
+		dojo.require("dojox.charting.Chart2D");
+		   dojo.require("dojox.charting.themes.Wetland");
+		   dojo.require("dojox.charting.widget.SelectableLegend");
+		   dojo.require("dojox.charting.action2d.Tooltip");
+		   
+		   var modelName="<%=request.getParameter("Name")%>";
+		   
+		   dojo.addOnLoad(function() {
+		        dojo.xhrGet({
+		        url: "/cbsatesting/Scalability/ChartData?modelName="+modelName,
+		        handleAs:"json",
+		        load:function(data){
+		           showChart(data);
+		        }});
+		        
+		        dojo.xhrGet({
+			        url: "/cbsatesting/Scalability/StatsData?modelName="+modelName,
+			        load:function(data){
+			           var targetNode = dojo.byId("table");
+			           targetNode.innerHTML = data;
+			        },
+			        error: function(error) {
+			        	var targetNode = dojo.byId("table");
+		                targetNode.innerHTML = "An unexpected error occurred: " + error;
+	           }});
+		   });
+		   
+		   function showChart(data){
+		      var chart = new dojox.charting.Chart2D("chart");
+		      chart.setTheme(dojox.charting.themes.Wetland);
+		      chart.addPlot("default", {
+		      type : "Spider",
+		      labelOffset : -20,
+		      divisions : 5,
+		      seriesFillAlpha : .05,
+		      markerSize : 4,
+		      precision : 0,
+		      spiderType : "polygon",
+		      htmlLabels: true,
+		      animationType: dojo.fx.easing.backOut
+		      });
+		      var time1=data[4].time;
+		      var time2=data[2].time;
+		      var time3=data[0].time;
+		      chart.addSeries(time1, {
+		         data : data[5]
+		      }, {
+		         fill : "blue"
+		      });
+		      chart.addSeries(time2, {
+		         data : data[3]
+		      }, {
+		         fill : "green"
+		      });
+		
+		      chart.addSeries(time3, {
+		         data : data[1]
+		         
+		      }, {
+		         fill : "purple"
+		      });
+		      new dojox.charting.action2d.Tooltip(chart,"default",{text: function(o){
+		         var value=o.y;
+		         return value;
+		      }
+		      });
+		      chart.render();
+		
+		      var legend = new dojox.charting.widget.SelectableLegend({
+		      chart : chart,
+		      horizontal : true
+		      }, "legend");
+		      
+		
+		
+		      //update every minutes
+		      setInterval(function(){
+		      dojo.xhrGet({
+		         url: "/cbsatesting/Scalability/ChartData?modelName="+modelName,
+		         handleAs:"json",
+		         load:function(data){
+		            chart.updateSeries(time1,data[5]);
+		            chart.updateSeries(time2,data[3]);
+		            chart.updateSeries(time3,data[1]); 
+		      }});
+		      },60000);
+		      
+		      setInterval(function(){
+			      dojo.xhrGet({
+			         url: "/cbsatesting/Scalability/StatsData?modelName="+modelName,
+			         load:function(data){
+				           var targetNode = dojo.byId("table");
+				           targetNode.innerHTML = data;
+				        },
+				        error: function(error) {
+				        	var targetNode = dojo.byId("table");
+			                targetNode.innerHTML = "An unexpected error occurred: " + error;
+		           }});
+		      },60000);
+		   }
+		   
+		   function displayMetric(metric, statistic)
+		   {
+		   	var name = metric.replace(/ /g, '%20');
+		   	document.getElementById("displaymodel").action = "../ScalabilityMetrics/DisplayMetric.jsp?Name=" + name + "&Statistic=" + statistic;
+		   	document.getElementById("displaymodel").submit();
+		   }
+		</script>
+	</head>
+
+	<body class="claro">
+		<p> <a href="/cbsatesting/Performance/SaaSEvaluation.jsp"> SaaS Evaluation </a> > <a href="../ScalabilityValidation.jsp"> Scalability Validation </a> > <a href="../ScalabilityReports.jsp"> Scalability Reports </a> > Model Report </p>
+		
+		<h2>Model Report: <%= request.getParameter("Name") %></h2>
+		
+		<form name="displaymodel" id="displaymodel" method="post">	
+			<table class="displaymodel">
+				<tr>
+					<td> Model Name: </td>
+					<td id="name"><%=resultset.getString("Name")%></td>
+				</tr>
+				<tr>
+					<td> Default: </td>
+					<td><% if(resultset.getInt("isDefault") == 0) out.print("No"); else out.print("Yes"); %>  </td>
+				</tr>
+				<tr>
+					<td> Description: </td>
+					<td id="description"><%=resultset.getString("Description")%></td>
+				</tr>
+				<tr>
+					<td> Type: </td>
+					<td><%=resultset.getString("Type")%></td>
+				</tr>
+				<tr>
+					<td> Number of Metrics: </td>
+					<td id="numMetrics"><%=resultset.getString("NumMetrics")%></td>
+				</tr>
+				<tr>
+					<td> Metrics: </td>
+					<td><%
+						resultset2.first();
+						out.println("<a href='#' onClick=\"displayMetric( '" +  resultset2.getString("Name") + "' , '" + resultset2.getString("Statistic") + "') \" > " + resultset2.getString("Name") + " (" + resultset2.getString("Statistic") + ") </a> <br/>");
+						while (resultset2.next())
+						{
+							out.println("<a href='#' onClick=\"displayMetric( '" +  resultset2.getString("Name") + "' , '" + resultset2.getString("Statistic") + "') \" > " + resultset2.getString("Name") + " (" + resultset2.getString("Statistic") + ") </a> <br/>");
+						}
+					%></td>
+				</tr>
+				<% if(!((request.getParameter("Name").equalsIgnoreCase("Cost"))|| (request.getParameter("Name").equalsIgnoreCase("ESS"))||(request.getParameter("Name").equalsIgnoreCase("ResponseTime"))||(request.getParameter("Name").equalsIgnoreCase("ScalabilityFactor")))) {%>
+				<tr>
+					<td> Graph: </td>
+					<td> 
+						<div id="chart" style="width: 500px; height: 500px;"></div>
+					</td> 
+				</tr>
+				<tr>
+					<td> Graph's Legend: </td>
+					<td> 
+						<div id="legend" style="width: 300px; height: 300px;"></div>				
+					</td> 
+				</tr>
+				<% }%>
+				<% if(request.getParameter("Name").equalsIgnoreCase("Cost") || request.getParameter("Name").equalsIgnoreCase("ESS"))  {%>
+				<tr>
+					<td> 3D Chart: </td>
+					<td> 
+						<a id="3dchart" href="#" onclick="make3DChart();">Click to see 3D chart</a> <br>
+						<a id="3dchart_comp_time" href="#" onclick="make3DChartComp();">Click to see Comparison between ESS and Cost for given time</a> <br>
+						<a id="3dchart_comp" href="#" onclick="make3DChartComp_esscost();">Click to see Comparison between ESS and Cost</a>				
+					</td> 
+				</tr>
+				<% } %>
+				<tr>
+					<td> Data: </td>
+					<td> 
+						<div id="table"></div>				
+					
+					<% if(request.getParameter("Name").equalsIgnoreCase("ResponseTime"))
+					{
+						int i = 0, count = 0;
+						
+						double total;
+						while(resultset5.next()){
+							if(i<8){
+								colltTime2[i] = resultset5.getTimestamp("CollectedTime").toString();
+								diskreadwrite[i] = resultset5.getInt("Data");
+								i++;
+							}
+						}
+						for (i = 0; i<8 ; i=i+4 ){
+							SimpleDateFormat sdf = new java.text.SimpleDateFormat ("yyyy-MM-dd HH:mm:ss.S");
+							resptime[count] = (sdf.parse(colltTime2[i]).getTime() - sdf.parse(colltTime2[i+2]).getTime())/(((diskreadwrite[i] + diskreadwrite[i+1]) - (diskreadwrite[i+2] + diskreadwrite[i+3]))/2);
+							out.println("<h4>Response Time for duration " + "t1: " + colltTime2[i] + " to " + "t2: " + colltTime2[i+2] + " is " + resptime[count]  + " milliseconds </h4>");
+							out.println();
+							count++;
+						}
+						total = resptime[0].doubleValue() * resptime[1].doubleValue();
+						out.println("<p id='message'>Therefore Response time of the system is sqrt(t1*t2) : " + Math.sqrt(total) + " milliseconds</p>"); 
+					}
+					%>
+					<% if(request.getParameter("Name").equalsIgnoreCase("ScalabilityFactor"))
+					{
+						int i = 0;
+						long responsetime;
+						float cpuutilize;
+						float systemload;
+						double total;
+						
+						Integer[] load = new Integer[5];
+						Integer[] resp = new Integer[5];
+						Integer[] cpu = new Integer[5];
+						
+						while(resultset6.next()){
+							if(i<8){
+								colltTime3[i] = resultset6.getTimestamp("CollectedTime").toString();
+								cpureadwriteload[i] = resultset6.getInt("Data");
+								i++;
+							}
+						}
+						i=0;
+						SimpleDateFormat sdf = new java.text.SimpleDateFormat ("yyyy-MM-dd HH:mm:ss.S");
+						responsetime= (sdf.parse(colltTime3[0]).getTime() - sdf.parse(colltTime3[4]).getTime())/(((cpureadwriteload[1] + cpureadwriteload[2]) - (cpureadwriteload[5] + cpureadwriteload[6]))/2);
+						cpuutilize = (cpureadwriteload[0] + cpureadwriteload[4])/2;
+						systemload = (cpureadwriteload[3] + cpureadwriteload[7])/2;
+						String addNewData = "INSERT INTO loadtestdata (`CollectedTime`, `SystemLoad`, `ResponseTime`, `CPUutilization`)  VALUES ";
+						addNewData += "(" + "'" +colltTime3[0] + "'," + systemload + ", " + responsetime + "," + cpuutilize + ")";
+						PreparedStatement addDataStatement = connection.prepareStatement(addNewData);
+						try{
+						addDataStatement.executeUpdate();
+						}
+						catch(Exception e){
+							
+						}
+						i=0;
+						while(resultset7.next()){
+							if(i<5){
+								load[i] = resultset7.getInt("SystemLoad");
+								cpu[i] = resultset7.getInt("CPUutilization");
+								resp[i] = resultset7.getInt("ResponseTime");
+								colltTime4[i] = (resultset7.getTimestamp("CollectedTime")).toString();
+								i++;
+							}
+						}
+						for(i=0;i<4;i++){
+							
+							scale[i] = (float)((((float)load[i+1]/load[i]) * ((float)resp[i+1]/resp[i]))/((float)cpu[i+1]/cpu[i])); 
+							out.println("<h4>Scale(L" + (i+1) + ",L" + (i+2) + ") is :" + scale[i]+"</h4>");
+						}
+					out.println("<p id='message'>The scalability factor for this system is " + Math.pow((float)(scale[0]*scale[1]*scale[2]*scale[3]),1/4)+"</p></br>");
+					}
+					%>
+					
+					</td>
+				</tr>
+				<% if(request.getParameter("Name").equalsIgnoreCase("ResponseTime")){%>
+				<tr>
+					<td> Graph: </td>
+					<td> <a id="3dchart" href="#" onclick="makeResponseTimeChart();">Click to see Response Time chart</a></td>
+					<td> 
+						<div id="chartResponseTime" style="width: 500px; height: 500px;"></div>
+					</td> 
+				</tr>
+				<% } %>
+				<% if(request.getParameter("Name").equalsIgnoreCase("ScalabilityFactor")){%>
+				<tr>
+					<td> Graph: </td>
+					<td> <a id="3dchart" href="#" onclick="makeScaleChart();">Click to see Scalability chart</a></td> 
+					<td> 
+						<div id="chartScalability" style="width: 500px; height: 500px;"></div>
+					</td>
+				</tr>
+				<% } %>
+			</table>
+		</form>	
+	<%
+		int i=0;
+		if(request.getParameter("Name").equalsIgnoreCase("Cost"))
+		{
+		while(resultset3.next())
+		{
+			if(i<10)
+			{
+				collectedTime[i] = resultset3.getTimestamp("CollectedTime").toString();
+				CostData[i] = resultset3.getInt("Data");
+				i++;
+			}
+		}
+		int j = 0;
+		while(resultset4.next())
+		{
+			if(j<10)
+			{
+				ESSData[j] = resultset4.getInt("Data");
+				j++;
+			}
+		}
+		}
+		else if(request.getParameter("Name").equalsIgnoreCase("ESS"))
+		{
+			while(resultset4.next())
+			{
+				if(i<10)
+				{
+					collectedTime[i] = resultset4.getTimestamp("CollectedTime").toString();
+					CostData[i] = resultset4.getInt("Data");
+					i++;
+				}
+			}
+			int j = 0;
+			while(resultset3.next())
+			{
+				if(j<10)
+				{
+					ESSData[j] = resultset3.getInt("Data");
+					j++;
+				}
+			}
+		}
+		%>
+		<div id="3DTable" ></div>		
+		<script type="text/javascript">
+		 function makeResponseTimeChart()
+		 {
+			 var modelName="<%=request.getParameter("Name")%>";
+			 var myData = new Array(["'" + "<%=colltTime2[0]%>" + "'" ,<%=resptime[0]%>], ["'" + "<%=colltTime2[4]%>" + "'" ,<%=resptime[1]%>]);
+			 var myChart = new JSChart('chartResponseTime', 'bar');
+			 myChart.setDataArray(myData);
+			 myChart.setAxisNameX('Time');
+			 myChart.setAxisNameY(modelName);
+			 myChart.setBarSpacingRatio(20);
+			 myChart.setTitle(modelName);
+			 myChart.draw();
+			 
+		 }
+		 function makeScaleChart()
+		 {
+			 var modelName="<%=request.getParameter("Name")%>";
+			 var myData = new Array(["'" + "<%=colltTime4[0]%>" + "'" ,<%=scale[0]%>], ["'" + "<%=colltTime4[1]%>" + "'" ,<%=scale[1]%>],
+					 ["'" + "<%=colltTime4[2]%>" + "'" ,<%=scale[2]%>],["'" + "<%=colltTime4[3]%>" + "'" ,<%=scale[3]%>] );
+			 var myChart = new JSChart('chartScalability', 'bar');
+			 myChart.setDataArray(myData);
+			 myChart.setAxisNameX('Time');
+			 myChart.setAxisNameY(modelName);
+			 myChart.setBarSpacingRatio(20);
+			 myChart.setSize(800, 350);
+			 myChart.setTitle(modelName);
+			 myChart.draw();
+			 
+		 }
+		 function make3DChart()
+			 {
+						var modelName="<%=request.getParameter("Name")%>";
+	 				var myData = new Array(["'" + "<%=collectedTime[0]%>" + "'" , <%=CostData[0]%>], ["'" + "<%=collectedTime[1]%>" + "'", <%=CostData[1]%>], ["'" + "<%=collectedTime[2]%>" + "'", <%=CostData[2]%>], 
+	 						["'" + "<%=collectedTime[3]%>" + "'", <%=CostData[3]%>], ["'" + "<%=collectedTime[4]%>" + "'", <%=CostData[4]%>], ["'" + "<%=collectedTime[5]%>" + "'", <%=CostData[5]%>], 
+	 						["'" + "<%=collectedTime[6]%>" + "'", <%=CostData[6]%>], ["'" + "<%=collectedTime[7]%>" + "'", <%=CostData[7]%>]);
+	 				var myChart = new JSChart('3DTable', 'bar');
+	 			  	myChart.setDataArray(myData);
+	 				myChart.setBackgroundColor('#bcbfbf');
+	 				myChart.setAxisNameX('Time');
+	 				myChart.setAxisNameY(modelName + 'Data');
+					myChart.setTitle(modelName);
+					myChart.setBarSpeed(80);
+					myChart.setBarSpacingRatio(20);
+					myChart.setTitleColor('#ec0707');
+					myChart.setBarColor('#ecb307', 1);
+					myChart.setLegendShow(true);
+					myChart.setLegend('#ecb307', modelName);
+					myChart.setSize(900, 350);
+					myChart.setLabelFontSizeX(4);
+					myChart.setAxisValuesPaddingLeft(40);
+	 				myChart.setTitleFontSize(10);
+	 				myChart.draw();
+			 }
+		 
+	 function make3DChartComp()
+		 {
+					var modelName="<%=request.getParameter("Name")%>";
+ 				var othermodel = "<%=othermodel%>";
+ 				var myData = new Array(["'" + "<%=collectedTime[0]%>" + "'", <%=CostData[0]%>,<%=ESSData[0]%>], ["'" + "<%=collectedTime[1]%>" + "'", <%=CostData[1]%>,<%=ESSData[1]%>], ["'" + "<%=collectedTime[2]%>" + "'", <%=CostData[2]%>,<%=ESSData[2]%>], 
+ 									   ["'" + "<%=collectedTime[3]%>" + "'", <%=CostData[3]%>,<%=ESSData[3]%>], ["'" + "<%=collectedTime[4]%>" + "'", <%=CostData[4]%>,<%=ESSData[4]%>], ["'" + "<%=collectedTime[5]%>" + "'", <%=CostData[5]%>,<%=ESSData[5]%>], 
+ 									   ["'" + "<%=collectedTime[6]%>" + "'", <%=CostData[6]%>,<%=ESSData[6]%>], ["'" + "<%=collectedTime[7]%>" + "'", <%=CostData[7]%>,<%=ESSData[7]%>]);
+ 				var myChart = new JSChart('3DTable', 'bar');
+ 			  	myChart.setDataArray(myData);
+ 				myChart.setBackgroundColor('#bcbfbf');
+ 				myChart.setAxisNameX('Time');
+ 				myChart.setAxisNameY('Data');
+				myChart.setTitle('Data comparison between ESS and Cost for given time');
+				myChart.setTitleColor('#ec0707');
+				myChart.setBarSpeed(80);
+				myChart.setBarSpacingRatio(20);
+				myChart.setBarColor('#ecb307', 1);
+				myChart.setBarColor('#29ec07', 2);
+				myChart.setLegendShow(true);
+				myChart.setLegend('#ecb307',modelName);
+				myChart.setLegend('#29ec07',othermodel);
+				myChart.setAxisValuesPaddingLeft(60);
+				myChart.setSize(900, 350);
+				myChart.setLabelFontSizeX(4);
+ 				myChart.setTitleFontSize(10);
+ 				myChart.draw();
+		 }
+	 function make3DChartComp_esscost()
+		 {
+				var modelName="<%=request.getParameter("Name")%>";
+ 				var myData = new Array([<%=CostData[0]%>,<%=ESSData[0]%>], [<%=CostData[1]%>,<%=ESSData[1]%>], [<%=CostData[2]%>,<%=ESSData[2]%>], 
+ 									   [<%=CostData[3]%>,<%=ESSData[3]%>], [<%=CostData[4]%>,<%=ESSData[4]%>], [<%=CostData[5]%>,<%=ESSData[5]%>], 
+ 									   [<%=CostData[6]%>,<%=ESSData[6]%>], [<%=CostData[7]%>,<%=ESSData[7]%>]);
+ 				var othermodel = "<%=othermodel%>";
+ 				var myChart = new JSChart('3DTable', 'line');
+ 			  	myChart.setDataArray(myData,'ESSvsCost');
+ 				myChart.setBackgroundColor('#bcbfbf');
+ 				myChart.setAxisNameX(modelName);
+ 				myChart.setAxisNameY(othermodel);
+				myChart.setTitle('Data comparison between ESS and Cost');
+				myChart.setTitleColor('#ec0707');
+				myChart.setLineSpeed(80);
+				myChart.setLineColor('#ecb307');
+				myChart.setLineWidth(6);
+				//myChart.setAxisValuesPaddingLeft(60);
+				myChart.setSize(900, 350);
+				myChart.setLabelFontSizeX(4);
+ 				myChart.setTitleFontSize(10);
+ 				myChart.draw();
+		 }
+					</script>
+	<%
+			}
+			else
+			{
+				out.println("ERROR OCCURRED! The given name does not exist in the database.");
+			}
+			resultset.close();
+			statement.close();
+			connection.close();
+		}
+		catch(Exception ex)
+		{
+			out.println("Unable to connect to database. </br>" + ex.getMessage());
+		}
+	%>		
+	</body>
+</html>
